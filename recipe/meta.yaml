@@ -12,7 +12,7 @@ source:
 
 build:
   number: 3
-  script: {{ PYTHON }} -m pip install . -vv
+  script: BUILD_WITH_CYTHON=1 {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
