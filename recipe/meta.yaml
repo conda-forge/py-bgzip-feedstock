@@ -11,8 +11,11 @@ source:
   sha256: 2562202a99b0cff1777d051cd3ed7ffa9a568ff8486f922935808e1a0478f01c
 
 build:
-  number: 2
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 3
+  script:
+    - export BUILD_WITH_CYTHON=1  # [not win]
+    - set BUILD_WITH_CYTHON=1  # [win]
+    - {{ PYTHON }} -m pip install . -vv
 
 requirements:
   build:
