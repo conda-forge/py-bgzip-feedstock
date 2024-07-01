@@ -1,5 +1,5 @@
 {% set name = "bgzip" %}
-{% set version = "0.4.0" %}
+{% set version = "0.5.0" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bgzip-{{ version }}.tar.gz
-  sha256: 2562202a99b0cff1777d051cd3ed7ffa9a568ff8486f922935808e1a0478f01c
+  sha256: 26ea6eed35ac43ea36cff828ca0f94925298ac21283cd0debaf072a92ac4be74
 
 build:
-  number: 4
+  number: 0
   script:
     - export BUILD_WITH_CYTHON=1  # [not win]
     - set BUILD_WITH_CYTHON=1  # [win]
@@ -20,6 +20,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
   host:
