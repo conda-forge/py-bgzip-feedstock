@@ -11,7 +11,7 @@ source:
   sha256: 2562202a99b0cff1777d051cd3ed7ffa9a568ff8486f922935808e1a0478f01c
 
 build:
-  number: 4
+  number: 5
   script:
     - export BUILD_WITH_CYTHON=1  # [not win]
     - set BUILD_WITH_CYTHON=1  # [win]
@@ -20,10 +20,12 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - llvm-openmp  # [osx]
     - libgomp      # [linux]
   host:
     - cython
+    - setuptools
     - pip
     - python
     - zlib
