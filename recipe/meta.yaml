@@ -25,6 +25,7 @@ requirements:
     - libgomp      # [linux]
   host:
     - cython
+    - setuptools
     - pip
     - python
     - zlib
