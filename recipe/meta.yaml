@@ -7,11 +7,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/bgzip-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/bgzip-{{ version }}.tar.gz
   sha256: 26ea6eed35ac43ea36cff828ca0f94925298ac21283cd0debaf072a92ac4be74
 
 build:
-  number: 0
+  number: 1
   script:
     - export BUILD_WITH_CYTHON=1  # [not win]
     - set BUILD_WITH_CYTHON=1  # [win]
